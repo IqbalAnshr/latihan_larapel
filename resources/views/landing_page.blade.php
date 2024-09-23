@@ -1,0 +1,12 @@
+@extends('layout.app')
+@section('content')
+    @include('partials.billboard')
+    @include('partials.services')
+    @include('partials.best_selling')
+    @include('partials.limited_offer')
+    @include('partials.list_item')
+    @include('partials.categories')
+    @include('partials.customer_review')
+    @include('partials.latest_post')
+    @include('partials.instagram')
+@endsection
