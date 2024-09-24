@@ -19,6 +19,8 @@ class bookFactory extends Factory
             'tittle' => $this->faker->sentence(),
             'writer' => $this->faker->name(),
             'price' => $this->faker->numberBetween(1000, 100000),
+            'image_path' => $this->faker->imageUrl(469, 669, 'books', true),
+            'sold' => $this->faker->numberBetween(0, 1000),
             'created_at' => now(),
             'updated_at' => now(),
         ];

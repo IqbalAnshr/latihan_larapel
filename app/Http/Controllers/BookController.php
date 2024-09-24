@@ -13,7 +13,18 @@ class bookController extends Controller
      */
     public function index()
     {
-        //
+
+        $booksForHero = book::limit(3)->get();
+        $bestSellerBooks = book::orderByDesc('sold')->limit(6)->get();
+        $featuredBooks = book::limit(3)->get();
+        $latestBooks = book::orderByDesc('created_at')->limit(3)->get();
+        $bestReviews = book::orderByDesc('price')->limit(3)->get();
+        $onsaleBooks = book::orderBy('sold')->limit(3)->get();
+
+
+        // dd($booksForHero, $bestSellerBooks);
+
+        return view('landing_page', ['booksForHero' => $booksForHero, 'bestSellerBooks' => $bestSellerBooks, 'featuredBooks' => $featuredBooks, 'latestBooks' => $latestBooks, 'bestReviews' => $bestReviews, 'onsaleBooks' => $onsaleBooks]);
     }
 
     /**
